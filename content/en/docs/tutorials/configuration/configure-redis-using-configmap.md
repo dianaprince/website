@@ -2,14 +2,14 @@
 reviewers:
 - eparis
 - pmorie
-title: Configuring Redis using a ConfigMap
+title: Configure Redis using a ConfigMap
 content_type: tutorial
 weight: 30
 ---
 
 <!-- overview -->
 
-This guide explains how to configure Redis using a ConfigMap and builds upon the [Configure a Pod to Use a ConfigMap](/docs/tasks/configure-pod-container/configure-pod-configmap/) task. 
+This guide explains how to configure a Redis cache using data stored in a ConfigMap and builds upon the [Configure a Pod to Use a ConfigMap](/docs/tasks/configure-pod-container/configure-pod-configmap/) task. 
 
 
 
@@ -35,11 +35,7 @@ This guide explains how to configure Redis using a ConfigMap and builds upon the
 <!-- lessoncontent -->
 
 
-## Configuring Redis using a ConfigMap
-
-Follow the steps below to configure a Redis cache using data stored in a ConfigMap.
-
-### Step 1: Create a ConfigMap
+## Step 1: Create a ConfigMap
 
 First, create a ConfigMap with an empty configuration block:
 
@@ -107,7 +103,7 @@ Data
 redis-config:
 ```
 
-### Step 2: Configure the pod
+## Step 2: Configure the pod
 
 Use `kubectl exec` to enter the pod and run the `redis-cli` tool to check the current configuration:
 
@@ -212,7 +208,7 @@ kubectl delete pod redis
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/main/content/en/examples/pods/config/redis-pod.yaml
 ```
 
-### Step 3: Validate changes
+## Step 3: Validate changes
 
 Check the configuration values:
 
